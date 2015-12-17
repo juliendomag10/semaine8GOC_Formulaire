@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mon Cv</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+      <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+    <link rel="stylesheet" href="cv.css" type="text/css" />
+
+  <script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+        };
+        
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+        
+        
+    }); 
+    </script>
+</head>
+
+  <body>
+
+       <header>
+        <div class="conteneur">
+            <div class="entete">
+                <img src="https://scontent-mad1-1.xx.fbcdn.net/hprofile-xlp1/v/t1.0-1/p160x160/11951876_10207755441982833_7815538539048338873_n.jpg?oh=7bc494e8a142ed7dd6acf8cc31978252&oe=56E1CC36" alt="maphoto" class="img-rounded text-right">
+            </div>
+            <div class="entete text-center">
+                <h1>Domagala Julien</h1>
+                <h2>Codeur</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+          <div class="conteneur">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                  <h3>Parcours avant la formation Simplonline</h3>
+                  <p>Obtention d'un bac ES</p>
+                </div>   
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                  <h3>Mes ambitions</h3>
+                  <p>Développer des connaissances et des savoir-faire dans le milieu du codage afin d'en faire mon métier.</p>
+                  <p>Aboutir à ce projet serait pour moi une véritable satisfaction.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <ul><h3>Expérience professionnelle</h3>
+                      <li>Secrétaire médical/Agent administratif</li>
+                      <li>Divers remplacements en tant que ASH dans un Centre Hospitalier</li>
+                    </ul>
+                </div>
+
+              </div>
+          </div>  
+
+           <div class="container">
+
+            <h2>Mon portfolio</h2>
+            <!--data-filter permet de filtrer les vignettes par catégorie-->
+            <ul id="filters" class="clearfix row">
+                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+            </ul>
+
+            <div id="portfoliolist"> <!--La div qui contient les vignettes des projets-->
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">             
+                        <img src="img/portfolios/logo/5.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Annuaire</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>              
+
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/app/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet HTML/CSS</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+                            
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">API Open Food Facts</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>  
+                            
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">
+                        <img src="img/portfolios/app/3.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Page de profil</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>          
+                
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet en Javascript</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                          
+                
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/app/2.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Page placement div</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                      
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/2.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice en Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                              
+                                                                                         
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/icon/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice utilisation Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/3.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet avec Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                    
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/3.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Tic-Tac-Toe</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                  
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/4.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Pierre-Feuille-Ciseau</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/icon/2.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                         
+
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/2.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Cookie Clicker</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        
+        </div>
+
+    </main>
+    
+    <footer>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2739.2726508526384!2d1.036190315597261!3d46.641129879132386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fc68cc71b0a283%3A0x9fce5de8bca6b6a5!2sLe+Bordiau%2C+36300+Saint-Aigny!5e0!3m2!1sfr!2sfr!4v1448479826173" width="350" height="300" frameborder="0" style="border:1" allowfullscreen></iframe>
+     
+
+        <div id="my-footer"> 
+            <ul class="list-inline">
+                <li><a href="https://www.facebook.com"><i class="fa fa-facebook-official"></i></a></li>
+                <li><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.github.com"><i class="fa fa-github"></i></a></li>
+                <li><p><strong>Mes coordonnées : Tél : 0677986283 / E-mail : julien.domagala@yahoo.fr</strong></p></li>            
+            </ul>
+        </div>
+        
+
+    
+
+            <form method="post" action="traitement.php">
+                 
+                    <fieldset>
+                    <p>
+                        <legend>Vos Coordonnées</legend>
+                        <br/>
+                        <label for="Nom">Votre Nom:</label><br/>
+                        <input type="text" name="Nom" id="Nom" placeholder="EX : Dupond" size="25"/>
+                           
+                        <br />
+                        <label for="Prénom">Votre Prénom :</label><br/>
+                        <input type="text" name="Prénom" id="Prénom" placeholder="EX : Maxime"  size="25"/>
+                        
+                        <br />
+                        <label for="Email"> Votre Adresse Email  :</label><br/>
+                        <input type="email" name="Email" id="Email" placeholder="EX : Max.Dupond@gmail.com"  size="30"/>
+                    </p>
+                    </fieldset>
+
+                    <fieldset>                       
+                        <legend>Vos commentaires</legend>
+                        <p><br/>
+                        <label for="message">Laissez moi votre message:</label><br/>
+                        <textarea name="message" id="message" placeholder="Ce Cv est fabuleux !"></textarea>
+                        </p>
+                    </fieldset>
+                    <br/>
+                    <p>
+                    <input type="submit" value="Envoyer"/>
+                    <input type="reset" value="Annuler" />
+                    </p>
+            </form>
+        
+    </footer>
+
+  </body>
+</html>
